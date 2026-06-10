@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лесковский уют — мини-отель</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER (contained, rounded, shadow on hover) ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo"><img src="img/logo.png" width="57" height="49" alt="Лесковский уют"></a>
+    <nav class="nav">
+      <a href="#" class="nav__link">Главная</a>
+      <a href="#about" class="nav__link">О нас</a>
+      <a href="#booking" class="nav__link">Бронирование</a>
+      <a href="#contacts" class="nav__link">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="stage">
+
+  <!-- ===== HERO / INTRO ===== -->
+  <section class="hero" id="about">
+    <div class="hero__img">
+      <img src="img/Group 1.png" width="728" height="638" alt="Интерьеры мини-отеля Лесковский уют">
+    </div>
+    <div class="hero__text">
+      <p>Мини-отель «Лесковский уют» — это место, где современный дизайн встречается с настоящей заботой о гостях. Мы создали пространство, в котором каждая деталь продумана для вашего комфорта.</p>
+      <p>Наши номера оформлены в разных стилях — от тёплой классики до смелого индастриала. Панорамные окна, дизайнерский интерьер и все удобства премиум-класса ждут вас.</p>
+    </div>
+  </section>
+
+  <!-- ===== OFFER (3 columns) ===== -->
+  <h2 class="section-title">Что мы готовы вам предложить?</h2>
+  <section class="offer">
+    <div class="offer-col offer-col--img-top">
+      <figure class="offer-img offer-img--top">
+        <img src="img/1779709837 1.png" width="501" height="422" alt="Премиум-комната в чёрно-белой гамме">
+      </figure>
+      <p>Премиум-комнаты со современным минималистичным интерьером в чёрно-белой гамме. Панорамные окна, мраморный пол, скрытое освещение и лаконичная мебель создают атмосферу строгой элегантности. Идеально для тех, кто ценит безупречный стиль.</p>
+    </div>
+
+    <div class="offer-col offer-col--text-top">
+      <p>Комнаты с тёплой атмосферой хюгге с камином, мягким диваном и живыми растениями. Свечи, деревянная мебель, вязаный плед и вид на природу создают ощущение домашнего уюта. Идеальное место для расслабления.</p>
+      <figure class="offer-img offer-img--bottom blob-b">
+        <img src="img/1779710227 1.png" width="500" height="397" alt="Уютная комната в стиле хюгге">
+      </figure>
+    </div>
+
+    <div class="offer-col offer-col--img-top">
+      <figure class="offer-img offer-img--top blob-c">
+        <img src="img/1779710265 1.png" width="491" height="463" alt="Классический гостиничный номер">
+      </figure>
+      <p>Классические гостиничные номера в нейтральных тонах. Удобная кровать с белым бельём, рабочий стол, телевизор и прикроватная тумбочка — всё необходимое для комфортного отдыха. Просто, чисто и функционально.</p>
+    </div>
+  </section>
+
+  <!-- ===== AVAILABILITY ===== -->
+  <h2 class="avail-headline" id="booking">Вы можете уже сейчас в реальном времени просмотреть комнаты в нашем наличии</h2>
+
+  <!-- ===== ROOM CARDS ===== -->
+  <section class="rooms">
+
+    <!-- Card 1 -->
+    <article class="room-card">
+      <a href="https://vi-tour.ru/n/xoqtquyp/" class="tour-link"><span>Виртуальная экскурсия<br><br>Нажмите чтобы перейти</span></a>
+      <div class="room-body">
+        <h3>Классическая комната</h3>
+        <figure class="room-photo blob-photo">
+          <img src="img/1779710265.png" width="501" height="422" alt="Классическая комната">
+        </figure>
+        <ul class="room-specs">
+          <li>Площадь: 18 м²</li>
+          <li>Вместимость: 2 гостя</li>
+          <li>Кровать: 1 двуспальная</li>
+          <li>Стиль интерьера: нейтральный, классический</li>
+          <li>Окна: стандартные</li>
+          <li>Пол: ламинат</li>
+          <li>Освещение: потолочное</li>
+          <li>Санузел: душевая</li>
+          <li>Удобства: рабочий стол, телевизор, тумбочка</li>
+          <li>Wi-Fi, кондиционер: есть</li>
+          <li>Уборка: ежедневная</li>
+          <li>Цена: от 3 500 ₽ / ночь</li>
+        </ul>
+        <div class="book-title">Забронируйте уже сегодня</div>
+        <form class="book-form" onsubmit="return false">
+          <div class="field-row">
+            <label>Прибытие</label>
+            <input class="field" type="text" placeholder="Выберите дату прибытия" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+          <div class="field-row">
+            <label>СПА</label>
+            <select class="field">
+              <option>Включать СПА?</option><option>Да</option><option>Нет</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label>Выезд из номера</label>
+            <input class="field" type="text" placeholder="Выберите дату выезда" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+          <div class="field-row">
+            <label>Номер телефона</label>
+            <input class="field" type="tel" placeholder="Введите номер">
+          </div>
+          <button type="submit" class="book-btn">Забронировать</button>
+        </form>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="room-card">
+      <a href="https://vi-tour.ru/n/xoqtquyp/" class="tour-link"><span>Виртуальная экскурсия<br><br>Нажмите чтобы перейти</span></a>
+      <div class="room-body">
+        <h3>Хюгги</h3>
+        <figure class="room-photo blob-photo">
+          <img src="img/1779710227.png" width="500" height="397" alt="Комната Хюгги">
+        </figure>
+        <ul class="room-specs">
+          <li>Площадь: 24 м²</li>
+          <li>Вместимость: 2–3 гостя</li>
+          <li>Кровать: двуспальная + диван</li>
+          <li>Стиль интерьера: тёплый хюгге</li>
+          <li>Окна: вид на природу</li>
+          <li>Пол: дерево / ковёр</li>
+          <li>Освещение: свечи, тёплый свет</li>
+          <li>Санузел: душевая</li>
+          <li>Удобства: камин, мягкий диван, плед, живые растения</li>
+          <li>Wi-Fi, кондиционер: есть</li>
+          <li>Уборка: ежедневная</li>
+          <li>Цена: от 4 700 ₽ / ночь</li>
+        </ul>
+        <div class="book-title">Забронируйте уже сегодня</div>
+        <form class="book-form" onsubmit="return false">
+          <div class="field-row">
+            <label>Прибытие</label>
+            <input class="field" type="text" placeholder="Выберите дату прибытия" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+          <div class="field-row">
+            <label>СПА</label>
+            <select class="field">
+              <option>Включать СПА?</option><option>Да</option><option>Нет</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label>Выезд из номера</label>
+            <input class="field" type="text" placeholder="Выберите дату выезда" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+          <div class="field-row">
+            <label>Номер телефона</label>
+            <input class="field" type="tel" placeholder="Введите номер">
+          </div>
+          <button type="submit" class="book-btn">Забронировать</button>
+        </form>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="room-card">
+      <a href="https://vi-tour.ru/n/xoqtquyp/" class="tour-link"><span>Виртуальная экскурсия<br><br>Нажмите чтобы перейти</span></a>
+      <div class="room-body">
+        <h3>Премиум</h3>
+        <figure class="room-photo blob-photo">
+          <img src="img/1779709837.png" width="491" height="463" alt="Премиум-номер">
+        </figure>
+        <ul class="room-specs">
+          <li>Площадь: 32 м²</li>
+          <li>Вместимость: 2 гостя</li>
+          <li>Кровать: 1 king-size</li>
+          <li>Стиль интерьера: минимализм, чёрно-белая гамма</li>
+          <li>Окна: панорамные, в пол</li>
+          <li>Пол: мрамор</li>
+          <li>Освещение: скрытое освещение</li>
+          <li>Санузел: ванна + душ</li>
+          <li>Удобства: дизайнерская мебель, мини-бар</li>
+          <li>Wi-Fi, кондиционер: есть</li>
+          <li>Уборка: ежедневная + сервис</li>
+          <li>Цена: от 5 900 ₽ / ночь</li>
+        </ul>
+        <div class="book-title">Забронируйте уже сегодня</div>
+        <form class="book-form" onsubmit="return false">
+          <div class="field-row">
+            <label>Прибытие</label>
+            <input class="field" type="text" placeholder="Выберите дату прибытия" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+          <div class="field-row">
+            <label>СПА</label>
+            <select class="field">
+              <option>Включать СПА?</option><option>Да</option><option>Нет</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label>Выезд из номера</label>
+            <input class="field" type="text" placeholder="Выберите дату выезда" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+          <div class="field-row">
+            <label>Номер телефона</label>
+            <input class="field" type="tel" placeholder="Введите номер">
+          </div>
+          <button type="submit" class="book-btn">Забронировать</button>
+        </form>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contacts">
+    <div class="footer-bar">
+      <div class="footer-copy">Лесковский уют ©<br>Все права защищены</div>
+      <div class="footer-socials">
+        <a href="#"><img src="img/Group 6.png" width="70" height="70" alt="ВКонтакте"></a>
+        <a href="#"><img src="img/Group 7.png" width="70" height="70" alt="Мессенджер"></a>
+        <a href="#"><img src="img/Group 8.png" width="70" height="70" alt="Карта"></a>
+      </div>
+      <div class="footer-contacts">leskovyuc35@mail.ru<br>+79123456789</div>
+      <a href="/Документация.zip" class="footer-docs" download>Документация<span class="arrow">↘</span></a>
+      <div class="footer-logo"><img src="img/logo.png" width="57" height="49" alt="Лесковский уют"></div>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>

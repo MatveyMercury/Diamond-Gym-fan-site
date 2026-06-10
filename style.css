@@ -1,0 +1,337 @@
+/* ============================================================
+   Лесковский уют — стили мини-отеля
+   Брейкпоинты: 1920 (десктоп) / 768 (планшет) 
+   ============================================================ */
+
+:root{
+  --bg:#3B3B3B;
+  --ribbon-dark:#1B1B1B;
+  --ribbon-light:#8B8B8B;
+  --card:#0a0a0a;
+  --white:#ffffff;
+  --radius-lg:40px;
+  --side:185px;            /* боковые отступы артборда 1920 */
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Marmelad, sans-serif; }
+
+html{font-size:16px;}
+
+body{
+  background-image: url(img/Desktop.svg);
+  font-family:Marmelad, sans-serif;
+  color:var(--white);
+  overflow-x:hidden;
+  position:relative;
+  min-height:100vh;
+}
+
+img{max-width:100%;height:auto;}   /* база адаптива: картинки ужимаются */
+
+/* ---------- волнистый фон ---------- */
+
+/* ============================================================
+   ШАПКА — контейнер по центру, скруглённый низ, тень при ховере
+   Шапка НЕ занимает всю ширину страницы.
+   ============================================================ */
+.site-header{
+  position:fixed;
+  z-index:500;
+  display:flex;
+  justify-content:center;
+  margin-inline:10%;
+  width: 80%;
+}
+.header-inner{
+  width:1130px;
+  max-width:100%;
+  margin:0 auto;
+  background:#3B3B3B;
+  border-radius:0 0 28px 28px;       /* скругление только снизу */
+  box-shadow:0 10px 40px rgba(0,0,0,.45);
+  display:flex;
+  align-items:center;
+  flex-direction:row;
+  justify-content:center;
+  gap:60px;
+  padding:20px 40px;
+  box-shadow: 0 0 20px #FFFFFF;
+}
+.logo{display:inline-flex;align-items:center;margin-right:30px;}
+.logo img{display:block;}            /* лого без подъёма/тени */
+
+.nav{display:flex;gap:48px;}
+.nav__link{
+  color:var(--white);
+  text-decoration:none;
+  font-size:18px;
+  letter-spacing:.2px;
+  padding:8px 16px;
+  border-radius:10px;
+  transition:box-shadow .28s ease, background .28s ease, transform .2s ease;
+}
+/* ХОВЕР В ШАПКЕ = ТЕНЬ */
+.nav__link:hover{
+  text-shadow:0 0px 22px rgba(255, 255, 255, 1);
+  transform:translateY(-1px);
+}
+
+/* ---------- артборд ---------- */
+.stage{
+  position:relative;
+  z-index:1;
+  width:1920px;
+  max-width:100%;
+  margin:0 auto;
+}
+
+/* ============================================================
+   HERO / ВСТУПЛЕНИЕ
+   ============================================================ */
+.hero{
+  display:flex;
+  align-items:center;
+  gap:60px;
+  padding:60px 95px 0;
+  height: 1080px;
+}
+.hero__img{flex:0 0 auto;line-height:0;}
+.hero__img img{display:block;transition:transform .4s cubic-bezier(.22,.61,.36,1);}
+.hero__img img:hover{transform:translateY(-16px);}
+
+.hero__text{flex:1 1 auto;text-align:center;padding:0 40px;}
+.hero__text p{font-size:25px;line-height:1.55;margin-bottom:34px;}
+.hero__text p:last-child{margin-bottom:0;}
+
+/* ============================================================
+   ЗАГОЛОВКИ СЕКЦИЙ
+   ============================================================ */
+.section-title{text-align:center;font-size:32px;font-weight:400;margin:120px 0 70px;}
+.avail-headline{text-align:center;font-size:32px;font-weight:400;margin:140px 0 60px;padding:0 40px;}
+
+/* ============================================================
+   ПРЕДЛОЖЕНИЕ (3 колонки) — мягкие «блобы»
+   ============================================================ */
+.offer{display:flex;align-items:flex-start;justify-content:center;padding:0 70px;}
+.offer-col{flex:1 1 0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 14px;}
+.offer-col--text-top{padding-top:70px;}
+.offer-col p{font-size:16px;line-height:1.5;max-width:320px;}
+
+.offer-img{line-height:0;}
+.offer-img img{
+  display:block;
+  transition:transform .4s cubic-bezier(.22,.61,.36,1);
+}
+.offer-img img:hover{transform:translateY(-16px);}
+.offer-img--top{margin-bottom:34px;}
+.offer-img--bottom{margin-top:34px;}
+
+/* мягкие органичные формы рамок (как в макете) */
+
+
+/* ============================================================
+   КАРТОЧКИ НОМЕРОВ
+   ============================================================ */
+.rooms{display:flex;flex-direction:column;gap:75px;padding:0 var(--side);}
+.room-card{
+  position:relative;
+  display:flex;
+  background:var(--white);
+  color:#000;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  min-height:846px;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.room-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(0,0,0,.45);}
+
+/* чёрная панель = виртуальная экскурсия (ссылка) */
+.tour-link{
+  flex:0 0 540px;
+  width:540px;
+  background:var(--card);
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  text-decoration:none;
+  font-size:24px;
+  line-height:1.4;
+  transition:background .3s ease;
+}
+.tour-link span{display:block;transition:transform .3s ease;}
+.tour-link:hover{background:#161616;box-shadow:inset 0 0 60px rgba(255,255,255,.05);}
+.tour-link:hover span{transform:scale(1.04);}
+
+.room-body{
+  flex:1 1 auto;
+  position:relative;
+  padding:48px 64px 40px;
+  display:flex;
+  flex-direction:column;
+}
+.room-body h3{text-align:center;font-size:28px;font-weight:400;margin-bottom:24px;}
+
+/* фото номера в правом верхнем углу карточки */
+.room-photo{
+  position:absolute;
+  top:48px;
+  right:64px;
+  width:300px;
+  height:300px;
+  line-height:0;
+  overflow:hidden;
+  border-radius:50% 50% 50% 50% / 50% 50% 50% 50%;
+}
+.room-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .4s cubic-bezier(.22,.61,.36,1);
+}
+.room-photo img:hover{transform:translateY(-12px) scale(1.03);}
+
+.room-specs{
+  list-style:none;
+  font-size:18px;
+  line-height:1.62;
+  max-width:560px;
+}
+.room-specs li{white-space:normal;}
+
+.book-title{text-align:center;font-size:24px;font-weight:400;margin:auto 0 28px;padding-top:36px;}
+
+/* форма бронирования: 2 колонки пар «лейбл + поле» + кнопка */
+.book-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px 40px;
+  justify-items:center;
+  align-items:center;
+}
+.field-row{display:flex;align-items:center;gap:18px;}
+.field-row label{font-size:18px;white-space:nowrap;}
+.field{
+  width:234px;
+  height:38px;
+  border:2px solid #000;
+  border-radius:9px;
+  background:#fff;
+  color:#000;
+  font-family:inherit;
+  font-size:13px;
+  padding:0 12px;
+  outline:none;
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.field::placeholder{color:#000;}
+.field:hover{border-color:#444;box-shadow:0 4px 12px rgba(0,0,0,.12);}
+.field:focus{border-color:#000;box-shadow:0 0 0 3px rgba(0,0,0,.14);}
+select.field{
+  -webkit-appearance:none;appearance:none;cursor:pointer;
+  background-image:
+    linear-gradient(45deg,transparent 50%,#000 50%),
+    linear-gradient(135deg,#000 50%,transparent 50%);
+  background-position:calc(100% - 18px) 16px, calc(100% - 12px) 16px;
+  background-size:6px 6px,6px 6px;
+  background-repeat:no-repeat;
+}
+
+.book-btn{
+  grid-column:1 / -1;
+  justify-self:center;
+  margin-top:8px;
+  border:none;
+  background:var(--card);
+  color:var(--white);
+  font-family:inherit;
+  font-size:14px;
+  padding:10px 26px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:box-shadow .28s ease, transform .2s ease, background .28s ease;
+}
+.book-btn:hover{background:#1d1d1d;box-shadow:0 10px 26px rgba(0,0,0,.4);transform:translateY(-2px);}
+.book-btn:active{transform:translateY(0);}
+
+/* ============================================================
+   ПОДВАЛ
+   ============================================================ */
+.site-footer{position:relative;z-index:2;margin-top:120px;}
+.footer-bar{
+  background:var(--card);
+  border-top-left-radius:var(--radius-lg);
+  border-top-right-radius:var(--radius-lg);
+  margin:0 var(--side);
+  padding:34px 70px;
+  display:flex;
+  align-items:center;
+  gap:60px;
+  justify-content:center;
+}
+.footer-copy{font-size:16px;line-height:1.5;white-space:nowrap;}
+.footer-socials{display:flex;gap:18px;}
+.footer-socials a{line-height:0;}
+.footer-socials img{display:block;transition:transform .4s cubic-bezier(.22,.61,.36,1);}
+.footer-socials img:hover{transform:translateY(-12px);}
+.footer-contacts{text-align:center;font-size:16px;line-height:1.7;}
+.footer-docs{
+  margin-left:0;display:flex;align-items:center;gap:8px;
+  color:var(--white);text-decoration:none;font-size:18px;
+  padding:0px 0px;border-radius:10px;
+  transition:box-shadow .28s ease, background .28s ease, transform .2s ease;
+}
+.footer-docs:hover{text-shadow:0 0px 22px rgba(255, 255, 255, 1);transform:translateY(-1px);}
+.footer-docs .arrow{font-size:14px;}
+.footer-logo{line-height:0;}
+.footer-logo img{display:block;}
+
+/* ============================================================
+   ПЛАНШЕТ — 768px
+   ============================================================ */
+@media (max-width:768px){
+  :root{--side:32px;--radius-lg:28px;}
+
+  .header-inner{gap:0;padding:16px 20px;border-radius:0 0 22px 22px;}
+  .logo{margin-right:0;margin-bottom:0px;justify-content:center;margin-left:50px;}
+  .nav{gap:6px;flex-basis:100%;justify-content:center;flex-wrap:wrap;}
+  .nav__link{font-size:16px;padding:8px 12px;}
+
+  .hero{flex-direction:column;gap:34px;padding:40px 32px 0;text-align:center;}
+  .hero__img{max-width:100%;}
+  .hero__text{padding:0;}
+  .hero__text p{font-size:18px;}
+
+  .section-title{font-size:26px;margin:70px 0 44px;}
+  .avail-headline{font-size:22px;margin:80px 0 44px;padding:0 24px;}
+
+  /* три предложения в столбик */
+  .offer{flex-direction:column;align-items:center;gap:44px;padding:0 32px;}
+  .offer-col{padding:0;max-width:520px;}
+  .offer-col--text-top{padding-top:0;display:flex;flex-direction:column-reverse;}
+  .offer-col--text-top .offer-img--bottom{margin-top:0;margin-bottom:28px;}
+  .offer-img--top{margin-bottom:24px;}
+
+  /* карточки в столбик: панель сверху, тело снизу */
+  .room-card{flex-direction:column;min-height:0;}
+  .tour-link{flex:0 0 auto;width:100%;padding:48px 20px;font-size:22px;}
+  .room-body{padding:34px 28px 34px;}
+  .room-photo{
+    position:static;
+    width:220px;height:220px;
+    margin:0 auto 24px;
+  }
+  .room-specs{max-width:none;font-size:16px;margin:0 auto;}
+  .book-form{grid-template-columns:1fr;gap:16px;}
+  .field-row{flex-direction:column;align-items:flex-start;gap:8px;width:100%;max-width:300px;}
+  .field-row label{text-align:left;}
+  .field{width:100%;}
+
+  /* подвал в столбик */
+  .footer-bar{flex-direction:column;gap:22px;text-align:center;padding:28px 24px;}
+  .footer-copy,.footer-contacts{white-space:normal;}
+  .footer-docs{margin-left:0;}
+}
+
+
